@@ -1,0 +1,127 @@
+@import 'colorscheme';
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: $background;
+
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        width: 100%;
+        height: 60px;
+
+        background: $color2;
+
+        * {
+            margin: 15px;
+        }
+
+        a {
+            color: $background;
+
+            &:hover {
+                color: $hovercolor;
+            }
+        }
+
+        input[type="text"] {
+            //search
+            padding: 5px 8px;
+            width: 15em;
+
+            border: none;
+            border-radius: 15px;
+
+            @media screen and (max-width: 800px) {
+                width: 8em;
+            }
+        }
+
+    }
+
+    main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 15px;
+
+        .content {
+            width: 85%;
+            display: flex;
+            flex-direction: column;
+
+
+            article {
+                display: flex;
+                flex-direction: column;
+
+                margin: 15px;
+                padding: 10px;
+                border-radius: 5px;
+                box-shadow: 10px 10px 5px -1px rgba(218, 218, 218, 0.8);
+
+                background: $background-light;
+
+                %shared_article {
+                    display: flex;
+                    flex-direction: row;
+
+                    margin: 5px;
+                }
+
+                %shared_footer {
+                    justify-content: space-between;
+                    button{
+                        outline: none;
+                        border: none;
+                        border-radius: 2px;
+                        
+                        padding:5px;
+
+                        background: $color2;
+                        color: $background;
+
+                        &:hover{
+                            background: $color1;
+                        }
+                    }
+                }
+
+                &>* {
+                    @extend %shared_article;
+                }
+
+                .articlemain {
+                    padding: 0 10px;
+                    color: $color1;
+                }
+
+                .articlefooter {
+                    @extend %shared_footer;
+                    
+                }
+
+                .articlecomment {
+                    margin: 10px 0 10px 2em ;
+                    
+                    border-top: 1px solid $color1;
+                    border-bottom: 1px solid $color1;
+                    flex-direction: column;
+
+                    &>* {
+                        @extend %shared_article;
+                    }
+
+                    .commentfooter {
+                        @extend %shared_footer;
+                    }
+                }
+            }
+        }
+    }
+}

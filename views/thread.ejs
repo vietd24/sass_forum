@@ -1,0 +1,72 @@
+<%- include('header') -%>
+<link rel="stylesheet" href="/stylesheets/thread.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="/">Home</a>
+        <input type="text" placeholder="search...">
+        <a href="/">shit</a>
+        <input type="image" class="bell" alt="Notification" src="/images/bell.png" onclick="alert('nothing');">
+        <input type="image" class="profile" alt="profile" src="/images/person.png" onclick="alert('nothing');">
+
+    </header>
+    <main>
+        <div class="content">
+
+            <article>
+                <div class="articleheader">
+                    <h3>
+                        <%= thread%>
+                    </h3>
+                </div>
+                <div class="articlemain">
+                    <p>This is the content</p>
+                </div>
+                <div class="articlefooter">
+                    <div>
+                        <button> Like </button>
+                        <button> Follow </button>
+                    </div>
+                    <div> Author</div>
+                </div>
+                <div class="articlecomment">
+                    <div class="commentmain">
+                        <p>This is the comment</p>
+                    </div>
+                        <div class="commentfooter">
+                            <div>
+                                <button> Like </button>
+                            </div>
+                            <div> Author</div>
+                    </div>
+                </div>
+                
+            </article>
+            <article>
+                <div class="articlemain">
+                    <p>This is the answer</p>
+                </div>
+                <div class="articlefooter">
+                    <div>
+                        <button> Like </button>
+                        <button> Follow </button>
+                    </div>
+                    <div> Author</div>
+                </div>
+                <div class="articlecomment">
+                    <div class="commentmain">
+                        <p>This is the comment</p>
+                    </div>
+                        <div class="commentfooter">
+                            <div>
+                                <button> Like </button>
+                            </div>
+                            <div> Author</div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+    <%- include('footer') -%>
