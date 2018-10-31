@@ -1,75 +1,118 @@
 @import 'colorscheme';
+@mixin flex($direction,$justify,$alignitems){
+    display:flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $alignitems;
+
+}
+@mixin transition(){transition: ease-in-out 0.5s;}
 
 body {
-    display: flex;
-    flex-direction: column;
+  
+    @include flex(column,unset ,unset );
+
     background: $background;
 
     header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-
-        width: 100%;
-        height: 60px;
-
         background: $color2;
+        @include flex(unset,center ,center );
 
-        * {
-            margin: 15px;
-        }
+        nav{
+            @include flex(row,space-between ,center );
+            @include transition();
 
-        a {
-            color: $background;
-
-            &:hover {
-                color: $hovercolor;
+            width: 100%;
+            max-width: 90em;
+            height: 60px;
+    
+            @media screen and (max-width: 1000px) and (min-width: 800px) {
+                max-width: 62em;
             }
-        }
-
-        input[type="text"] {
-            //search
-            padding: 5px 8px;
-            width: 15em;
-
-            border: none;
-            border-radius: 15px;
-
             @media screen and (max-width: 800px) {
-                width: 8em;
+                max-width: 41em;
+            }
+
+            > * {
+               // margin: 15px;
+                min-width: 100px;
+            }
+    
+            a {
+                color: $background;
+                text-align: center;
+    
+                height: 100%;
+                padding: 20px;
+                &:hover {
+                    background: $color2-dark;
+                }
+            }
+    
+            input[type="text"] {
+                @include transition();
+
+                //search
+                padding: 5px 8px;
+                width: 15em;
+                height: 2.2em;
+                border: none;
+                border-radius: 15px;
+
+    
+                &:hover, &:focus {
+                    width: 20em;
+                    border-radius: 5px;
+                }
+                @media screen and (max-width: 800px) {
+                    width: 8em;
+                    &:hover, &:focus {
+                        width: 10em;
+                    }
+                }
+    
+            }
+            div{
+                @include flex(row,space-between ,center );
+                height: 100%;
+                
+                > *{
+                   padding: 14px;
+                }
+
+                & > *:hover {
+                    background: $color2-dark;
+                }
             }
         }
-
     }
 
     main {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex(unset,center ,center );
+        @include transition();
+
         width: 100%;
         padding: 15px;
-
+        
         .content {
-            width: 85%;
-            display: flex;
-            flex-direction: column;
+            @include flex(column,unset ,unset );
+            @include transition();
 
+            width: 90%;
+            max-width: 85rem;
 
             article {
-                display: flex;
-                flex-direction: column;
+                @include flex(column,unset ,unset );
 
                 margin: 15px;
                 padding: 10px;
                 border-radius: 5px;
-                box-shadow: 10px 10px 5px -1px rgba(218, 218, 218, 0.8);
+                box-shadow: 10px 10px 5px -1px rgba(218, 218, 218, 0.7);
 
                 background: $background-light;
 
                 %shared_article {
-                    display: flex;
-                    flex-direction: row;
+                    @include flex(row,unset ,unset );
 
                     margin: 5px;
                 }
@@ -87,7 +130,7 @@ body {
                         color: $background;
 
                         &:hover{
-                            background: $color1;
+                            background: $color2-dark;
                         }
                     }
                 }
@@ -103,7 +146,7 @@ body {
 
                 .articlefooter {
                     @extend %shared_footer;
-                    
+                    padding: 0 10px;
                 }
 
                 .articlecomment {
@@ -119,8 +162,26 @@ body {
 
                     .commentfooter {
                         @extend %shared_footer;
+
+                        div:last-child{
+                            padding-right: 10px;
+                        }
                     }
                 }
+
+            }
+        }
+        @media screen and (max-width: 800px) {
+
+            padding: 0;
+            .content{
+                width: 100%
+            }
+        }
+        @media screen and (max-width: 1000px) {
+
+            .content{
+                width: 95%
             }
         }
     }
