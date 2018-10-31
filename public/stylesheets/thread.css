@@ -43,9 +43,9 @@ body {
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center;
-      -webkit-transition: ease-in-out 0.5s;
-      -o-transition: ease-in-out 0.5s;
-      transition: ease-in-out 0.5s;
+      -webkit-transition: all ease-in-out 0.5s;
+      -o-transition: all ease-in-out 0.5s;
+      transition: all ease-in-out 0.5s;
       width: 100%;
       max-width: 90em;
       height: 60px; }
@@ -56,6 +56,9 @@ body {
         body header nav {
           max-width: 41em; } }
       body header nav > * {
+        -webkit-transition: all ease-in-out 0.5s;
+        -o-transition: all ease-in-out 0.5s;
+        transition: all ease-in-out 0.5s;
         min-width: 100px; }
       body header nav a {
         color: #f0f0f0;
@@ -63,11 +66,12 @@ body {
         height: 100%;
         padding: 15px; }
         body header nav a:hover {
-          background: #175966; }
+          background: #175966;
+          color: #ef8354; }
       body header nav input[type="text"] {
-        -webkit-transition: ease-in-out 0.5s;
-        -o-transition: ease-in-out 0.5s;
-        transition: ease-in-out 0.5s;
+        -webkit-transition: all ease-in-out 0.5s;
+        -o-transition: all ease-in-out 0.5s;
+        transition: all ease-in-out 0.5s;
         padding: 5px 8px;
         width: 15em;
         height: 2.2em;
@@ -114,9 +118,9 @@ body {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    -webkit-transition: ease-in-out 0.5s;
-    -o-transition: ease-in-out 0.5s;
-    transition: ease-in-out 0.5s;
+    -webkit-transition: all ease-in-out 0.5s;
+    -o-transition: all ease-in-out 0.5s;
+    transition: all ease-in-out 0.5s;
     width: 100%;
     padding: 15px; }
     body main .content {
@@ -133,9 +137,9 @@ body {
       -webkit-box-align: unset;
       -ms-flex-align: unset;
       align-items: unset;
-      -webkit-transition: ease-in-out 0.5s;
-      -o-transition: ease-in-out 0.5s;
-      transition: ease-in-out 0.5s;
+      -webkit-transition: all ease-in-out 0.5s;
+      -o-transition: all ease-in-out 0.5s;
+      transition: all ease-in-out 0.5s;
       width: 90%;
       max-width: 85rem; }
       body main .content article {

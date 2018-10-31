@@ -3,14 +3,17 @@
 
 </head>
 
-<body>
-    <div>
-            <div>
+<body onload="$('js-tilt').tilt({
+    scale: 2,
+    maxTilt: 3,
+    })">
+    <div data-tilt>
         <h1>
             <%= title %>
         </h1>
-        <h2><a href="thread">Thread view</a></h2>
     </div>
-</div>
+    <h2><a href="thread">Thread view</a></h2>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
 
     <%- include('footer') -%>

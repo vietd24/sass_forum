@@ -7,7 +7,7 @@
     align-items: $alignitems;
 
 }
-@mixin transition(){transition: ease-in-out 0.5s;}
+@mixin transition(){transition: all ease-in-out 0.5s;}
 
 body {
   
@@ -35,7 +35,7 @@ body {
             }
 
             > * {
-               // margin: 15px;
+               @include transition();
                 min-width: 100px;
             }
     
@@ -47,6 +47,7 @@ body {
                 padding: 15px;
                 &:hover {
                     background: $color2-dark;
+                    color: $color3;
                 }
             }
     
