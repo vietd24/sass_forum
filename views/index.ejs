@@ -1,14 +1,16 @@
 <%- include('header') -%>
-</head>
-<body>
-    <h1><%= title %></h1>
-    <h2><a href="thread">Thread view</a></h2>
-    <style>body {
-        height:100vh;
-        display:flex; 
-        flex-direction: column; 
-        justify-content: center; 
-        align-items:center;
-        }</style>
-<%- include('footer') -%>
+<link rel="stylesheet" href="/stylesheets/index.css">
 
+</head>
+
+<body>
+    <div>
+            <div>
+        <h1>
+            <%= title %>
+        </h1>
+        <h2><a href="thread">Thread view</a></h2>
+    </div>
+</div>
+
+    <%- include('footer') -%>

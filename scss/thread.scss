@@ -1,4 +1,5 @@
 @import 'colorscheme';
+
 @mixin flex($direction,$justify,$alignitems){
     display:flex;
     flex-direction: $direction;
@@ -38,21 +39,21 @@ body {
                 min-width: 100px;
             }
     
-            a {
+            a { //home
                 color: $background;
                 text-align: center;
     
                 height: 100%;
-                padding: 20px;
+                padding: 15px;
                 &:hover {
                     background: $color2-dark;
                 }
             }
     
-            input[type="text"] {
+            input[type="text"] {   //search
                 @include transition();
 
-                //search
+             
                 padding: 5px 8px;
                 width: 15em;
                 height: 2.2em;
@@ -72,7 +73,7 @@ body {
                 }
     
             }
-            div{
+            div{ //icons
                 @include flex(row,space-between ,center );
                 height: 100%;
                 
